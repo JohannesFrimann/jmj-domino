@@ -122,6 +122,15 @@ addEventListener('pointerup', e => {
   }
   if (e.button === 2) mouse.right = false;
 });
+// Ef spjaldtölvan truflar snertingu (t.d. kerfisbending) -> hætta öllu án þess að gera neitt
+addEventListener('pointercancel', () => {
+  mouse.left = false;
+  mouse.right = false;
+  lastPlaced = null;
+  pushing = null;
+  aiming = null;
+  rampDraft = null;
+});
 let pushing = null;
 
 // ---------- Rampar ----------

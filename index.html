@@ -63,9 +63,16 @@
     canvas {
       max-width: 100vw;
       max-height: calc(100vh - var(--bar));
+      max-height: calc(100dvh - var(--bar));
       aspect-ratio: 320 / 180;
       width: 100%;
+      /* Spjaldtölva: fingurinn á að teikna, ekki skruna eða þysja */
+      touch-action: none;
+      -webkit-user-select: none; user-select: none;
+      -webkit-touch-callout: none;
     }
+    html, body { overscroll-behavior: none; }
+    #toolbar button { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
   </style>
 </head>
 <body>
